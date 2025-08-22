@@ -101,5 +101,4 @@ class LoginFragment : Fragment() {
     fun showError(message: String) {
         binding.validationPassword.text = message
     }
-
 }
