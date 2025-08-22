@@ -6,14 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ozinsheapplication.data.ApiService
 import com.example.ozinsheapplication.data.ServiceBuilder
-import com.example.ozinsheapplication.data.model.LoginRecponse
+import com.example.ozinsheapplication.data.model.LoginResponse
 import com.example.ozinsheapplication.data.model.LoginRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class LoginViewModel():ViewModel() {
-    private val _loginResponce: MutableLiveData<LoginRecponse> = MutableLiveData()
-    val loginResponce:LiveData<LoginRecponse> = _loginResponce
+    private val _loginResponse: MutableLiveData<LoginResponse> = MutableLiveData()
+    val loginResponce:LiveData<LoginResponse> = _loginResponse
 
     private val _errorResponce: MutableLiveData<String> = MutableLiveData()
     val errorResponce:LiveData<String> = _errorResponce
@@ -25,7 +25,7 @@ class LoginViewModel():ViewModel() {
 
             runCatching { response.loginUser(LoginRequest(email, password)) }
                 .onSuccess {
-                    _loginResponce.postValue(it)
+                    _loginResponse.postValue(it)
                 }
                 .onFailure {
                     _errorResponce.postValue(it.message)

@@ -20,7 +20,7 @@ class OnboardingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentOnboardingBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -51,11 +51,10 @@ class OnboardingFragment : Fragment() {
         binding.viewPager2WelcomeFragment.registerOnPageChangeCallback(viewPagerCallBack)
 
 
-        binding.btnSkipOnboarding.setOnClickListener {
-            findNavController().navigate(R.id.action_onboardingFragment_to_loginFragment)
-
-        }
         binding.bntNextPageOnboarding.setOnClickListener {
+            findNavController().navigate(R.id.action_onboardingFragment_to_loginFragment)
+        }
+        binding.btnSkipOnboarding.setOnClickListener {
             findNavController().navigate(R.id.action_onboardingFragment_to_loginFragment)
         }
     }

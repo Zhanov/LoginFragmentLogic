@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ozinsheapplication.data.OnboardingModel
 import com.example.ozinsheapplication.databinding.ItemViewpagerOnboardingBinding
 
-class OnboardingAdapter():RecyclerView.Adapter<OnboardingAdapter.OnboardingViewHolder>() {
+class OnboardingAdapter :RecyclerView.Adapter<OnboardingAdapter.OnboardingViewHolder>() {
 
     private val onboardingModelList = mutableListOf<OnboardingModel>()
     fun submitList(list: List<OnboardingModel>) {

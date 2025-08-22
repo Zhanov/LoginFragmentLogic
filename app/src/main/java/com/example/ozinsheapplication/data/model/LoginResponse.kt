@@ -3,7 +3,7 @@ package com.example.ozinsheapplication.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginRecponse(
+data class LoginResponse(
     @SerializedName("id")
     val id: Int, // 25958
     @SerializedName("username")
